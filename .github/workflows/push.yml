@@ -27,6 +27,5 @@ jobs:
       - name: Upload the file
         run: aws s3 cp ./test.txt s3://akhil-dev-bucket/artifacts/
       - name: Explore all aws cli
-        run: |
-          aws s3 ls
-          aws iam list-roles
+        run: aws s3 ls
+          # aws iam list-roles -> bcoz role has only s3 permission ;)
