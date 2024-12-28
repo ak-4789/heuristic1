@@ -1,0 +1,1 @@
+Writing from a python file using writing mode
