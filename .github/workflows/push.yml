@@ -1,0 +1,24 @@
+name: Upload to S3
+
+on:
+  push:
+   branch:
+    - S3Upload
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  S3Upload:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Get Code
+      uses: actions/checkout@v3
+    - name: Get AWS Permissions
+      uses: aws-actions/configure-aws-credentials@v4
+      with: 
+        aws-region: us-east-1
+        role-to-assume: arn:aws:iam::266735840247:role/aws-github-oidc-role
+    - name: Check Permission
+      run: aws s3 ls
