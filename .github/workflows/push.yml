@@ -9,6 +9,10 @@ permissions:
   id-token: write
   contents: read
 
+env:
+  AWS_REGION: us-east-1
+  AWS_ROLE_ARN: arn:aws:iam::266735840247:role/aws-oidc-github-role
+
 jobs:
   S3Upload:
     runs-on: ubuntu-latest
@@ -18,7 +22,7 @@ jobs:
       - name: Get AWS Permissions
         uses: aws-actions/configure-aws-credentials@v4
         with: 
-          aws-region: us-east-1
-          role-to-assume: arn:aws:iam::266735840247:role/aws-github-oidc-role
+          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: ${{ env.AWS_ROLE_ARN }}
       - name: Check Permission
         run: aws s3 ls
