@@ -24,5 +24,9 @@ jobs:
         with: 
           aws-region: ${{ env.AWS_REGION }}
           role-to-assume: ${{ env.AWS_ROLE_ARN }}
-      - name: Check Permission
-        run: aws s3 ls
+      - name: Upload the file
+        run: aws s3 cp ./test.txt s3://akhil-dev-bucket/artifacts/
+      - name: Explore all aws cli
+        run: |
+          aws s3 ls
+          aws iam list-roles
