@@ -1,0 +1,21 @@
+name: "Docker Python Generator"
+author: "AkhileshGHA"
+description: "Test"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+
+branding:
+  icon: "git-branch"
+  color: "blue"
+
+inputs:
+  email:
+    description: Committer's email address
+    required: true
+    default: ${{ github.actor}}@localhost
+  name:
+    description: Committer's name 
+    required: true
+    default: ${{ github.actor}}
