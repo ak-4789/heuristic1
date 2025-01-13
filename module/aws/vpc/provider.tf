@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket         = "akhil-tf-state-bucket"
-    key            = "platform/aws/tf-tfstate"
+    key            = "platform/aws-tf/vpc.tfstate"
     region         = "us-east-1"
     # dynamodb_table = "akhil-dev-table"
   }
