@@ -1,9 +1,7 @@
 name: AWS Terraform GitHub Actions
 run-name: ${{ github.actor }} triggred the pipeline
 
-on:
-  workflow_dispatch
-  push
+on: [workflow_dispatch, push]
 
 permisions:
   id-token: write
