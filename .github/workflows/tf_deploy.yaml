@@ -1,0 +1,37 @@
+name: AWS Terraform GitHub Actions
+run-name: ${{ github.actor }} triggred the pipeline
+
+on:
+  workflow_dispatch
+  push
+
+permisions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: us-east-1
+  AWS_ROLE_ARN: arn:aws:iam::266735840247:role/aws-oidc-github-role
+
+jobs:
+  aws_infra:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout the code
+        uses: actions/checkout@v4
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: ${{ env.AWS_ROLE_ARN }}
+      - name: setup Terraform
+        uses: hashicorp/setup-terraform@v3
+      - name: terraform init
+        run: terraform init
+        working-directory: module/aws/vpc
+      - name: terraform validate
+        run: terraform validate
+        working-directory: module/aws/vpc
+      - name: terraform plan
+        run: terraform plan
+        working-directory: module/aws/vpc

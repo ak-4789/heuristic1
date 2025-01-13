@@ -1,2 +1,2 @@
 # heuristic1
-This is repo for trying new learning
+This is repo for AWS with Terraform
