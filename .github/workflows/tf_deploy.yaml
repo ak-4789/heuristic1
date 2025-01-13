@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} triggred the pipeline
 
 on: [workflow_dispatch, push]
 
-permisions:
+permissions:
   id-token: write
   contents: read
 
