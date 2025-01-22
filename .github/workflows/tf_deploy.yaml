@@ -3,11 +3,11 @@ name: AWS Terraform GitHub
 
 on:
   workflow_dispatch:
-    inputs:
-      env_name:
-        description: 'GitHub environment(dev/test/prod)'
-        type: string
-        default: 'envvv'
+    #inputs:
+      #env_name:
+        #description: 'GitHub environment(dev/test/prod)'
+        #type: string
+        #default: 'envvv'
   #workflow_call:
     #inputs:
       #env_name:
