@@ -13,8 +13,6 @@ on:
       env_name:
         description: 'GitHub environment(dev/test/prod)'
         type: string
-      
-        
 
 permissions:
   id-token: write
@@ -30,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Var
-        run: echo "env name : "
+        run: echo "env name = dd"
       - name: checkout the code
         uses: actions/checkout@v4
       - name: configure aws credentials
