@@ -8,11 +8,11 @@ on:
         description: 'GitHub environment(dev/test/prod)'
         type: string
         default: 'envvv'
-  workflow_call:
-    inputs:
-      env_name:
-        description: 'GitHub environment(dev/test/prod)'
-        type: string
+  #workflow_call:
+    #inputs:
+      #env_name:
+        #description: 'GitHub environment(dev/test/prod)'
+        #type: string
 
 permissions:
   id-token: write
