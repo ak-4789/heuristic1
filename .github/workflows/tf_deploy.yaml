@@ -18,7 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Var
-        run: echo dd
+        run: |
+          echo "dd"
       - name: checkout the code
         uses: actions/checkout@v4
       - name: configure aws credentials
