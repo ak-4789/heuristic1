@@ -1,17 +1,8 @@
 name: AWS Terraform GitHub
 #run-name: ${{ github.actor }} triggred the pipeline
 
-on: workflow_dispatch
-    #inputs:
-      #env_name:
-        #description: 'GitHub environment(dev/test/prod)'
-        #type: string
-        #default: 'envvv'
-  #workflow_call:
-    #inputs:
-      #env_name:
-        #description: 'GitHub environment(dev/test/prod)'
-        #type: string
+on:
+  workflow_dispatch
 
 permissions:
   id-token: write
