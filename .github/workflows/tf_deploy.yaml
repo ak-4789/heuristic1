@@ -2,6 +2,7 @@ name: AWS Terraform GitHub
 #run-name: ${{ github.actor }} triggred the pipeline
 
 on:
+  push:
   workflow_dispatch:
 
 permissions:
