@@ -1,7 +1,20 @@
 name: AWS Terraform GitHub Actions
 run-name: ${{ github.actor }} triggred the pipeline
 
-on: [workflow_dispatch, push]
+on:
+  workflow_dispatch:
+    inputs:
+      env_name:
+        description: 'GitHub environment(dev/test/prod)'
+        type: string
+        default: 'envvv'
+  workflow_call:
+    inputs:
+      env_name:
+        description: 'GitHub environment(dev/test/prod)'
+        type: string
+      
+        
 
 permissions:
   id-token: write
@@ -10,11 +23,14 @@ permissions:
 env:
   AWS_REGION: us-east-1
   AWS_ROLE_ARN: arn:aws:iam::266735840247:role/aws-oidc-github-role
+  name: ${{ inputs.env_name}}
 
 jobs:
   aws_infra:
     runs-on: ubuntu-latest
     steps:
+      - name: Print Var
+        run: echo "env name : "
       - name: checkout the code
         uses: actions/checkout@v4
       - name: configure aws credentials
