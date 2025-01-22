@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Print Var
         run: |
-          echo "dd"
+          echo "dd  "
       - name: checkout the code
         uses: actions/checkout@v4
       - name: configure aws credentials
