@@ -1,8 +1,7 @@
 name: AWS Terraform GitHub
 #run-name: ${{ github.actor }} triggred the pipeline
 
-on:
-  workflow_dispatch:
+on: workflow_dispatch
     #inputs:
       #env_name:
         #description: 'GitHub environment(dev/test/prod)'
@@ -21,7 +20,7 @@ permissions:
 env:
   AWS_REGION: us-east-1
   AWS_ROLE_ARN: arn:aws:iam::266735840247:role/aws-oidc-github-role
-  name: ${{ inputs.env_name}}
+  #name: ${{ inputs.env_name}}
 
 jobs:
   aws_infra:
